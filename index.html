@@ -220,35 +220,7 @@
     <!---------------LINK FOR EXTERNAL JS------------------->
      <script src="main.js"></script>
     <!---------------LINK FOR EXTERNAL JS------------------->
-    <script>
-        window.addEventListener('scroll', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-        
-            let current = '';
-        
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute('id');
-                }
-            });
-        
-            navLinks.forEach(link => {
-                link.classList.remove('text-red-500', 'text-blue-500');
-                if (link.getAttribute('data-target') === current) {
-                    if (current === 'home' || current === 'project') {
-                        link.classList.add('text-red-500');
-                    } else {
-                        link.classList.add('text-blue-500');
-                    }
-                } else {
-                    link.classList.add('text-black-500');
-                }
-            });
-        });
-    </script>
+    
     
 </body>
 </html>
