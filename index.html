@@ -158,7 +158,7 @@
             
             <!-- Wrapping portfolio items in a flex container with flex-wrap -->
             <div class="flex flex-wrap justify-center -m-4">
-                <div class="w-72 p-4 border-2 border-gray-300 rounded overflow-hidden m-4">
+                <div class="w-72 p-4 border-2 border-gray-300 rounded overflow-hidden m-4 project-box">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-center w-full h-full block" src="images/Chef Biwash Gurung.png">
                     </a>
@@ -305,6 +305,17 @@
                
             </div>
         </div>
+        <style>
+            .project-box {
+    transition: transform 0.3s, z-index 0.3s;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+    z-index: 100;
+}
+
+        </style>
 
         <script>
             function openLink(link) {
