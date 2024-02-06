@@ -34,26 +34,6 @@
             </div>
         </nav>
 
-        <script>
-            window.addEventListener('scroll', function() {
-                var nav = document.querySelector('nav');
-                var aboutSection = document.getElementById('about');
-                var projectSection = document.getElementById('project');
-                var contactSection = document.getElementById('contact');
-                var scrollTop = window.scrollY;
-        
-                if (aboutSection.offsetTop <= scrollTop && projectSection.offsetTop > scrollTop) {
-                    nav.style.backgroundColor = 'red';
-                    nav.style.color = 'white';
-                } else if (projectSection.offsetTop <= scrollTop && contactSection.offsetTop > scrollTop) {
-                    nav.style.backgroundColor = 'blue';
-                    nav.style.color = 'white';
-                } else {
-                    nav.style.backgroundColor = 'white';
-                    nav.style.color = 'black';
-                }
-            });
-        </script>
         
         
         
