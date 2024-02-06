@@ -20,32 +20,33 @@ document.querySelector("footer .footer-year").textContent =
 
 
 
+//changing nav bar state
+ window.addEventListener('scroll', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
 
-    window.addEventListener('scroll', function() {
-        var nav = document.querySelector('nav');
-        var aboutSection = document.getElementById('about');
-        var projectSection = document.getElementById('project');
-        var contactSection = document.getElementById('contact');
-        var scrollTop = window.scrollY;
+    let current = '';
 
-        if (scrollTop >= aboutSection.offsetTop && scrollTop < projectSection.offsetTop) {
-            document.querySelector('nav a[href="#about"]').style.color = "blue";
-            document.querySelector('nav a[href="#project"]').style.color = "";
-            document.querySelector('nav a[href="#contact"]').style.color = "";
-        } else if (scrollTop >= projectSection.offsetTop && scrollTop < contactSection.offsetTop) {
-            document.querySelector('nav a[href="#about"]').style.color = "";
-            document.querySelector('nav a[href="#project"]').style.color = "red";
-            document.querySelector('nav a[href="#contact"]').style.color = "";
-        } else if (scrollTop >= contactSection.offsetTop) {
-            document.querySelector('nav a[href="#about"]').style.color = "";
-            document.querySelector('nav a[href="#project"]').style.color = "";
-            document.querySelector('nav a[href="#contact"]').style.color = "green";
-        } else {
-            // Reset colors if none of the sections are scrolled to
-            document.querySelector('nav a[href="#about"]').style.color = "";
-            document.querySelector('nav a[href="#project"]').style.color = "";
-            document.querySelector('nav a[href="#contact"]').style.color = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
         }
     });
+
+    navLinks.forEach(link => {
+        link.classList.remove('text-red-500', 'text-blue-500');
+        if (link.getAttribute('data-target') === current) {
+            if (current === 'home' || current === 'project') {
+                link.classList.add('text-red-500');
+            } else {
+                link.classList.add('text-blue-500');
+            }
+        } else {
+            link.classList.add('text-black-500');
+        }
+    });
+});
 
 
