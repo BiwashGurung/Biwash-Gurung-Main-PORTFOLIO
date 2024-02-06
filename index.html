@@ -32,30 +32,6 @@
                     </li>
                 </ul>
             </div>
-           
-            <script>
-                window.addEventListener('scroll', function() {
-                    var nav = document.querySelector('nav');
-                    var aboutSection = document.getElementById('about');
-                    var projectSection = document.getElementById('project');
-                    var contactSection = document.getElementById('contact');
-                    var scrollTop = window.scrollY;
-            
-                    console.log("Scroll Top:", scrollTop);
-                    console.log("About Section OffsetTop:", aboutSection.offsetTop);
-                    console.log("Project Section OffsetTop:", projectSection.offsetTop);
-                    console.log("Contact Section OffsetTop:", contactSection.offsetTop);
-            
-                    if (scrollTop >= aboutSection.offsetTop && scrollTop < projectSection.offsetTop) {
-                        nav.style.color = "red";
-                    } else if (scrollTop >= projectSection.offsetTop && scrollTop < contactSection.offsetTop) {
-                        nav.style.color = "blue";
-                    } else {
-                        nav.style.color = "black";
-                    }
-                });
-            </script>
-            
             
         </nav>
         
