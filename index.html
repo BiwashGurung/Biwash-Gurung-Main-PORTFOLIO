@@ -32,26 +32,7 @@
                     </li>
                 </ul>
             </div>
-            <script>
-                window.addEventListener('scroll', function() {
-                    var nav = document.querySelector('nav');
-                    var aboutSection = document.getElementById('about');
-                    var projectSection = document.getElementById('project');
-                    var contactSection = document.getElementById('contact');
-                    var scrollTop = window.scrollY;
-            
-                    if (aboutSection.offsetTop <= scrollTop && projectSection.offsetTop > scrollTop) {
-                        nav.classList.remove('text-black');
-                        nav.classList.add('text-red-500');
-                    } else if (projectSection.offsetTop <= scrollTop && contactSection.offsetTop > scrollTop) {
-                        nav.classList.remove('text-black');
-                        nav.classList.add('text-blue-500');
-                    } else {
-                        nav.classList.remove('text-red-500', 'text-blue-500');
-                        nav.classList.add('text-black');
-                    }
-                });
-            </script>
+           
             
             
         </nav>
