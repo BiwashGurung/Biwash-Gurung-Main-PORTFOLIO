@@ -19,26 +19,20 @@
         
                 <ul class="flex justify-center my-4 items-center text-sm md:text-[18px] font-bold md:px-10">
                     <li class="py-2 rounded-lg px-2 md:px-5 transition duration-300 ease-in-out transform hover:scale-105">
-                        <a href="#" class="hover:underline underline-offset-4 decoration-2 decoration-white hover:text-red-500">Home</a>
+                        <a href="#" class="nav-link" data-target="home">Home</a>
                     </li>
                     <li class="py-2 rounded-lg px-2 md:px-5 transition duration-300 ease-in-out transform hover:scale-105">
-                        <a href="#about" class="hover:underline underline-offset-4 decoration-2 decoration-white hover:text-blue-500">About</a>
+                        <a href="#about" class="nav-link" data-target="about">About</a>
                     </li>
                     <li class="py-2 rounded-lg px-2 md:px-5 transition duration-300 ease-in-out transform hover:scale-105">
-                        <a href="#project" class="hover:underline underline-offset-4 decoration-2 decoration-white hover:text-red-500">Projects</a>
+                        <a href="#project" class="nav-link" data-target="project">Projects</a>
                     </li>
                     <li class="py-2 rounded-lg px-2 md:px-5 transition duration-300 ease-in-out transform hover:scale-105">
-                        <a href="#contact" class="hover:underline underline-offset-4 decoration-2 decoration-white hover:text-blue-500">Contact</a>
+                        <a href="#contact" class="nav-link" data-target="contact">Contact</a>
                     </li>
                 </ul>
             </div>
-            
         </nav>
-        
-
-        
-        
-        
 
         <div class="flex flex-col md:flex-row justify-center max-w-7xl text-blackS p-5 md:p-16 lg:p-28">
             <div class="flex flex-col text-black md:mr-10 mt-10">
@@ -226,5 +220,30 @@
     <!---------------LINK FOR EXTERNAL JS------------------->
      <script src="main.js"></script>
     <!---------------LINK FOR EXTERNAL JS------------------->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+        
+            let current = '';
+        
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+        
+            navLinks.forEach(link => {
+                link.classList.remove('text-red-500', 'text-blue-500');
+                if (link.getAttribute('data-target') === current) {
+                    link.classList.add('text-red-500');
+                } else {
+                    link.classList.add('text-blue-500');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
