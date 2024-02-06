@@ -41,23 +41,18 @@
                     var scrollTop = window.scrollY;
             
                     if (aboutSection.offsetTop <= scrollTop && projectSection.offsetTop > scrollTop) {
-                        nav.classList.remove('bg-white');
                         nav.classList.remove('text-black');
-                        nav.classList.add('bg-red-500');
-                        nav.classList.add('text-white');
+                        nav.classList.add('text-red-500');
                     } else if (projectSection.offsetTop <= scrollTop && contactSection.offsetTop > scrollTop) {
-                        nav.classList.remove('bg-white');
                         nav.classList.remove('text-black');
-                        nav.classList.add('bg-blue-500');
-                        nav.classList.add('text-white');
+                        nav.classList.add('text-blue-500');
                     } else {
-                        nav.classList.remove('bg-red-500');
-                        nav.classList.remove('bg-blue-500');
-                        nav.classList.add('bg-white');
+                        nav.classList.remove('text-red-500', 'text-blue-500');
                         nav.classList.add('text-black');
                     }
                 });
             </script>
+            
             
         </nav>
         
